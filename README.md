@@ -1,61 +1,99 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<p align="center"><strong>KursusQ - Sistem Informasi Kursus</strong></p>
 
-## About Laravel
+<div align="center">
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![logo_unsulbar](public/gambar/image.png)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<b>Nurhidayanti</b><br>
+<b>D0222355</b><br>
+<b>Framework Web Based</b><br>
+<b>2025</b>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+</div>
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🎯 Role dan Fitur
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 1. Admin 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   Manajemen data pengguna (tambah/edit/hapus Pengelola & Pengguna )
+-   Manajemen jenis kursus
+-   Manajemen konten kursus (judul, deskripsi, harga, reting)
+-   Verifikasi kursus yang diajukan oleh instruktur
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 2. Pengelola Kursus 
 
-### Premium Partners
+-   Membuat dan mengelola kursus
+-   Melihat pendaftaran peserta pada kursus mereka
+-   Melihat statistik kursus (jumlah siswa, rating)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+### 3. Peserta Kursus
 
-## Contributing
+-   Mendaftar dan login ke sistem
+-   Menelusuri & mencari kursus
+-   Mengelola kategori pekerjaan
+-   Mengelola lokasi (kota)
+-   Memberi rating dan ulasan terhadap kursus
+-   Melihat detail kursus
+-   Mengelola profil pribadi
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+##  Struktur Tabel Database
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 1. `pengguna`
 
-## Security Vulnerabilities
+| Field          | Tipe Data | Keterangan                             |
+| -------------- | --------- | -------------------------------------- |
+| id             | INT,PK    | ID pengguna                            |
+| nama           | VARCHAR   | Nama pengguna                          |
+| email          | VARCHAR   | Email unik pengguna                    |
+| password       | VARCHAR   | Password (hashed)                      |
+| role           | ENUM      | `peserta_kursus`, `pengelola`, `admin` |
+| created_at     | TIMESTAMP | Timestamp pembuatan                    |
+| updated_at     | TIMESTAMP | Timestamp pembaruan                    |
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 2. `Kategori`
 
-## License
+| Field         | Tipe Data | Keterangan                      |
+| ------------- | --------- | ------------------------------- |
+| id            | INT,PK    | ID kategori                     |
+| Nama_Kategori | VARCHAR   | Nama Kategori                   |
+| created_at    | TIMESTAMP | Timestamp pembuatan             |
+| updated_at    | TIMESTAMP | Timestamp pembaruan             |
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 3. `kursus`
+
+| Field           | Tipe Data | Keterangan                      |
+| --------------- | --------- | ------------------------------- |
+| id              | INT,PK    | ID kursus                       |
+| Nama_kursus     | Text      | Nama_kursus                     |
+| Deskripsi       | VARCHAR   | deskripsi Kursu                 |
+| thumbnail       | VARCHAR   | Gambar thumbnail                |
+| kategori_id     | INT, FK   | ID kategori                     |
+| created_at      | TIMESTAMP | Timestamp pembuatan             |
+| updated_at      | TIMESTAMP | Timestamp pembaruan             |
+
+### 4. `review`
+
+| Field      | Tipe Data | Keterangan                |
+| ---------- | --------- | ------------------------- |
+| id         | INT, PK   | ID Review                 |
+| pengguna_id| INT, FK   | ID pengguna               |
+| kursus_id  | INT, FK   | ID kursus                 |
+| reting     | Int       | Penilaian (1-5)           |
+| created_at | TIMESTAMP | Timestamp pembuatan       |
+| updated_at | TIMESTAMP | Timestamp pembaruan       |
+
+---
+
+## 🔗 Relasi Antar Tabel
+
+-   `pengguna` ↔ `Kursus` : One-to-Many
+-   `Kategori` ↔ `kursus` : One-to-Many
+-   `Review` ↔ `Kursus` : One-to-Many
+-   `Pengguna` ↔ `Review` : One-to-Many
+---
