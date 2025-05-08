@@ -3,7 +3,7 @@
 
 <div align="center">
 
-![logo_unsulbar](public/gambar/image.png)
+![logo_unsulbar](public/image.png)
 
 <b>Nurhidayanti</b><br>
 <b>D0222355</b><br>
