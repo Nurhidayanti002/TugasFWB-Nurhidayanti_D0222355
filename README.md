@@ -94,6 +94,7 @@
 
 -   `pengguna` ↔ `Kursus` : One-to-Many
 -   `Kategori` ↔ `kursus` : One-to-Many
+-   `pengguna` ↔ `kursus` : Many-to-Many
 -   `Review` ↔ `Kursus` : One-to-Many
 -   `Pengguna` ↔ `Review` : One-to-Many
 ---
