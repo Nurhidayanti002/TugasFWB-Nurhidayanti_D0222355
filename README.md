@@ -112,7 +112,7 @@
 
 ## 🔗 Relasi Antar Tabel
 
--   `pengguna` ↔ `Kursus` : One-to-Many
+-   `pengguna` ↔ `Kursus` : Many-to-Many
 -   `Kategori` ↔ `kursus` : One-to-Many
 -   `pengguna` ↔ `profil` : One-to-One
 -   `Review` ↔ `Kursus` : One-to-Many
