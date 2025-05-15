@@ -88,13 +88,33 @@
 | created_at | TIMESTAMP | Timestamp pembuatan       |
 | updated_at | TIMESTAMP | Timestamp pembaruan       |
 
+### 5. `Profil`
+
+| Field      | Tipe Data | Keterangan                |
+| ---------- | --------- | ------------------------- |
+| id         | INT, PK   | ID Review                 |
+| pengguna_id| INT, FK   | ID pengguna               |
+| Alamat     | INT, FK   | Alamat Pengguna           |
+| No_telepon | Int       | No telfon pengguna        |
+| created_at | TIMESTAMP | Timestamp pembuatan       |
+| updated_at | TIMESTAMP | Timestamp pembaruan       |
+
+### 6. `Kursus Pengguna`
+
+| Field      | Tipe Data | Keterangan                |
+| ---------- | --------- | ------------------------- |
+| id         | INT, PK   | ID Review                 |
+| pengguna_id| INT, FK   | ID pengguna               |
+| kursus_id  | INT, FK   | ID kursus                 |
+| created_at | TIMESTAMP | Timestamp pembuatan       |
+| updated_at | TIMESTAMP | Timestamp pembaruan       |
 ---
 
 ## 🔗 Relasi Antar Tabel
 
 -   `pengguna` ↔ `Kursus` : One-to-Many
 -   `Kategori` ↔ `kursus` : One-to-Many
--   `pengguna` ↔ `kursus` : Many-to-Many
+-   `pengguna` ↔ `profil` : One-to-One
 -   `Review` ↔ `Kursus` : One-to-Many
 -   `Pengguna` ↔ `Review` : One-to-Many
 ---
